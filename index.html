@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="heading">Super over</h1>
+        <div class="game">
+            <div class="team-1 row">
+                <img src="https://i.ibb.co/8jvCxb9/india.webp" alt="ind-img">
+                <span class="team-name t1-name">
+                </span>
+                <div class="score-board t1-score-board" id="t1-parent">
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                </div>
+            </div>
+            <div class="score-card row"> 
+                <div>
+                    <span class="score" id="t1-score">-</span>
+                    <span class="score">-</span>
+                    <span class="score" id="t2-score">-</span>
+                </div>
+            </div>
+            <div class="team-2 row">
+                <img src="https://i.ibb.co/4FXHjgT/australia.png" alt="aus-img">
+                <span class="team-name t2-name">
+                </span>
+                <div class="score-board t2-score-board" id="t2-parent">
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                    <span class="score">-</span>
+                </div>
+            </div>
+        </div>
+        <div class="strike-btn">
+            <button class="btn" id="bttn" onclick="buttonClick()">Start</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
