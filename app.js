@@ -38,33 +38,36 @@ function updateBtn()
 {
     let btnName= document.getElementById('bttn');
     //toss
-    if(turn==0)
-    {
-        btnName.textContent=`${team1.name} batting`;
-    }
-    else
-    {
-        btnName.textContent=`${team2.name} batting`;
-    }
+    btnName.textContent = turn == 0 ? `${team1.name} batting`:`${team2.name} batting`;
+    // if(turn==0)
+    // {
+    //     btnName.textContent=`${team1.name} batting`;
+    // }
+    // else
+    // {
+    //     btnName.textContent=`${team2.name} batting`;
+    // }
     
     let result = document.getElementById("result");
     //game over or not
     if(team1.runs.length==6 && team2.runs.length==6)
     {
         btnName.remove();
-        //check match draw/win
-        if(team1.score==team2.score)
-        {
-            result.textContent="match draw";
-        }
-        else if(team1.score>team2.score)
-        {
-            result.textContent=`${team1.name} wins`;
-        }
-        else
-        {
-            result.textContent=`${team2.name} wins`;
-        }
+        //check match draw
+        result.textContent = team1.score==team2.score ? "match draw" : 
+        team1.score>team2.score ? `${team1.name} wins`: `${team2.name} wins`;
+        // if(team1.score==team2.score)
+        // {
+        //     result.textContent="match draw";
+        // }
+        // else if(team1.score>team2.score)
+        // {
+        //     result.textContent=`${team1.name} wins`;
+        // }
+        // else
+        // {
+        //     result.textContent=`${team2.name} wins`;
+        // }
     }
     //change turn
     else
@@ -107,14 +110,22 @@ function buttonClick()
         updateRuns();
     }
 }
-//calculate score
 function calculateScore(runs)
 {
     return runs.map(num => {
-        return num=="W" ? 0: num;
+    return num=="W" ? 0: num;
     }).reduce((total, num) => total+num);
+    // let s=0;
+    // for(let n of runs)
+    //   {
+    //     if(n=="W")
+    //       {
+    //         n=0;
+    //       }
+    //     s += n;
+    //   }
+    // return s;
 }
-//display runs
 function updateRuns()
 {
     let child1 = document.getElementById("t1-parent").children;
