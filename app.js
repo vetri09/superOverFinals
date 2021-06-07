@@ -52,7 +52,7 @@ function updateBtn()
     if(team1.runs.length==6 && team2.runs.length==6)
     {
         btnName.remove();
-        //check match draw
+        //check match draw/win
         if(team1.score==team2.score)
         {
             result.textContent="match draw";
@@ -107,12 +107,14 @@ function buttonClick()
         updateRuns();
     }
 }
+//calculate score
 function calculateScore(runs)
 {
     return runs.map(num => {
         return num=="W" ? 0: num;
     }).reduce((total, num) => total+num);
 }
+//display runs
 function updateRuns()
 {
     let child1 = document.getElementById("t1-parent").children;
